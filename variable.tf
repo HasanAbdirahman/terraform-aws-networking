@@ -1,4 +1,5 @@
 variable "vpc_config" {
+  description = "Contains the VPC configuration. More specifically, the required cidr block and name"
   type = object({
     cidr_block = string
     name       = string
@@ -10,6 +11,10 @@ variable "vpc_config" {
 }
 
 variable "subnet_config" {
+  description = <<-eot
+  Shows the subnet configuration and if it's private and public.
+  eot
+
   type = map(object({
     cidr_block = string
     az         = string
